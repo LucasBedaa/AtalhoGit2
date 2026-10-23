@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Drop2Git — pasta para o GitHub</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main>
+<header>
+  <div><h1>Drop<span>2</span>Git</h1><p class="sub">Solte a pasta do projeto. Confira o nome e o README. Aceite.</p></div>
+</header>
+
+<details class="card" id="cfg">
+  <summary>Configurações</summary>
+  <label for="gh">Token do GitHub (permissão <code>repo</code>)</label>
+  <input type="password" id="gh" placeholder="ghp_..." autocomplete="off">
+  <small>Crie em github.com/settings/tokens/new (classic, marque “repo”).</small>
+  <label for="ak">Chave da API Anthropic (opcional, para nome e README com IA)</label>
+  <input type="password" id="ak" placeholder="sk-ant-..." autocomplete="off">
+  <small>Opcional. Sem essa chave, o nome, a descrição e o README são gerados localmente e sem custo. Com a chave, trechos do código são enviados à Anthropic.</small>
+  <label class="chk"><input type="checkbox" id="dpriv" checked> Criar repositórios privados por padrão</label>
+  <div class="row"><button class="p" id="savecfg">Testar e salvar</button><span id="cfgmsg" class="mu"></span></div>
+  <p class="mu" style="margin-bottom:0">As chaves ficam salvas só neste navegador, neste computador.</p>
+</details>
+
+<section class="v" id="home">
+  <div id="dz">
+    <b>Solte a pasta do projeto aqui</b>
+    <span class="mu">ou</span>
+    <div class="row" style="justify-content:center"><button class="p" id="pickbtn">Escolher pasta…</button></div>
+    <input type="file" id="pick" webkitdirectory hidden>
+  </div>
+  <p class="mu">Ficam de fora: <code>node_modules</code>, <code>.git</code>, <code>target</code>, <code>build</code>, <code>.idea</code>, <code>.vscode</code>, arquivos <code>.env</code>/chaves e arquivos acima de 20 MB.</p>
+</section>
+
+<section class="v" id="load" hidden>
+  <div class="card"><b id="lmsg">Trabalhando…</b><div class="bar"><i id="lbar"></i></div><span class="mu" id="lsub"></span></div>
+</section>
+
+<section class="v" id="review" hidden>
+  <div class="card">
+    <b>Confira antes de enviar</b> <span class="mu" id="stats"></span>
+    <label for="name">Nome do repositório</label>
+    <input type="text" id="name">
+    <label for="desc">Descrição</label>
+    <input type="text" id="desc">
+    <label class="chk"><input type="checkbox" id="priv"> Repositório privado</label>
+    <label for="readme">README.md (pode editar)</label>
+    <textarea id="readme" spellcheck="false"></textarea>
+    <div class="row"><input type="text" id="fb" placeholder="Quer mudar algo? Ex.: mais curto, inclua instalação"><button id="redo">Gerar novamente</button></div>
+    <div class="row"><button class="p" id="ok">Aceitar e enviar ao GitHub</button><button id="cancel">Cancelar</button></div>
+  </div>
+</section>
+
+<section class="v" id="done" hidden>
+  <div class="card"><b>Enviado!</b><br><a class="big" id="link" target="_blank" rel="noopener"></a>
+  <div class="row"><button class="p" id="again">Enviar outro projeto</button></div></div>
+</section>
+
+<section class="v" id="fail" hidden>
+  <div class="card"><b class="err">Não foi possível concluir</b><p id="emsg"></p>
+  <div class="row"><button class="p" id="back">Voltar</button></div></div>
+</section>
+</main>
+<div id="toast" role="status"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
