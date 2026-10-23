@@ -1,9 +1,9 @@
-Drop2Git
-O Drop2Git é uma aplicação web que facilita a publicação de projetos no GitHub. Em vez de criar manualmente um repositório e enviar os arquivos um por um, o usuário seleciona ou arrasta uma pasta do computador, revisa as informações do projeto e envia tudo para o GitHub pela própria interface.
+AtalhoGit2
+O AtalhoGit2 é uma aplicação web que facilita a publicação de projetos no GitHub. Em vez de criar manualmente um repositório e enviar os arquivos um por um, o usuário seleciona ou arrasta uma pasta do computador, revisa as informações do projeto e envia tudo para o GitHub pela própria interface.
 
 A aplicação também gera uma sugestão de nome, uma descrição e um arquivo README.md para o repositório. A geração local funciona sem depender de uma API paga de inteligência artificial.
 Para que serve?
-O Drop2Git foi desenvolvido para simplificar as etapas iniciais de publicação de projetos, ajudando a:
+O AtalhoGit2 foi desenvolvido para simplificar as etapas iniciais de publicação de projetos, ajudando a:
 - Criar um repositório no GitHub a partir de uma pasta local.
 - Sugerir um nome e uma descrição para o repositório.
 - Gerar uma documentação inicial em README.md.
@@ -26,13 +26,13 @@ Tecnologias utilizadas
 - GitHub REST API: validação do token, criação do repositório e envio do conteúdo usando operações da API Git.
 - Anthropic API (opcional): geração e revisão do nome, descrição e README com IA quando o usuário fornece uma chave válida.
 Estrutura dos arquivos
-Drop2Git/
+AtalhoGit2/
 ├── index.html   # Estrutura da interface
 ├── style.css    # Estilos e layout
 ├── script.js    # Lógica, análise de arquivos e integração com APIs
 └── README.md    # Documentação do projeto
 Como executar
-O Drop2Git é uma aplicação web estática. Não é necessário compilar o projeto nem instalar dependências de Node.js para abrir a interface.
+O AtalhoGit2 é uma aplicação web estática. Não é necessário compilar o projeto nem instalar dependências de Node.js para abrir a interface.
 1. Baixe ou clone este repositório.
 2. Mantenha index.html, style.css e script.js na mesma pasta.
 3. Abra index.html em um navegador compatível, como uma versão recente do Chrome ou Edge.
@@ -50,6 +50,7 @@ As configurações são guardadas no localStorage do navegador utilizado. Isso s
 
 Atenção: guardar tokens no navegador é conveniente para uso pessoal, mas não é a opção mais segura para uma aplicação pública ou compartilhada. Não publique seu token, não o inclua no código-fonte e remova/revogue qualquer token que tenha sido exposto.
 Arquivos ignorados
+
 A aplicação exclui diretórios comuns de dependências e arquivos gerados, incluindo:
 - .git, node_modules, target, build, dist, out
 - .gradle, .idea, .vscode, venv, .venv
@@ -63,4 +64,6 @@ Limitações
 - A publicação depende de conexão com a internet e de um token do GitHub válido, com permissões suficientes.
 - A chave da Anthropic é opcional; o uso da API pode ter cobrança de acordo com a conta e as condições do provedor.
 Objetivo do projeto
-O Drop2Git busca tornar mais simples e rápido o processo de transformar uma pasta de código em um repositório organizado no GitHub, com documentação inicial e possibilidade de revisão antes da publicação.
+O AtalhoGit2 busca tornar mais simples e rápido o processo de transformar uma pasta de código em um repositório organizado no GitHub, com documentação inicial e possibilidade de revisão antes da publicação.
+
+*A parte de descrições do readme ainda esta em fase de melhoria*
